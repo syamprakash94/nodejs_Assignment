@@ -19,11 +19,17 @@ password:{
     require:true,
     min:6,
 },
+phonenumber:{
+    type:Number,
+
+},
 isAdmin:{
     type:Boolean,
     default:false,
 },
 
-});
+},
+{timestamps:true} 
+);
 
 module.exports = mongoose.model("User", UserSchema);
