@@ -5,11 +5,13 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
+
 const userRoute = require("./routes/users");
-const projectRoute = require("./routes/projects")
+const projectRoute = require("./routes/projects");
+const adminRoute = require("./routes/admin");
 
-const cookieParser = require('cookie-parser')
 
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
@@ -43,6 +45,7 @@ app.use(session({
 
 app.use("/api/users", userRoute);
 app.use("/api/projects", projectRoute);
+app.use("/api/admin", adminRoute);
 
 
 

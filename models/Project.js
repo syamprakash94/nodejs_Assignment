@@ -1,33 +1,43 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-const ProjectSchema = new mongoose.Schema({
-    projectname:{
-        type:String,
-        required:true,
-        max:100
+const ProjectSchema = new mongoose.Schema(
+  {
+    userId: {
+      type: String,
+      required: true,
     },
-    startdate:{
-        type:Date,        
+    projectname: {
+      type: String,
+      required: true,
+      max: 100,
     },
-    estimatedhours:{
-        type:String,
+    startdate: {
+      type: Date,
+    //   required: true,
     },
-    toolstobeused:{
-        type:Array,
+    estimatedhours: {
+      type: String,
+    //   required: true,
     },
-    methodology:{
-        type:String,
+    toolstobeused: {
+      type: Array,
+    //   required: true,
     },
-    noofdevelopers:{
-        type:Number
+    methodology: {
+      type: String,
+    //   required: true,
     },
-    mobileapp:{
-        type:Boolean,
-    }
+    noofdevelopers: {
+      type: Number,
+    //   required: true,
+    },
+    mobileapp: {
+      type: Boolean,
+      default: false,
+    },
+  }
 
-}
-
-// {timestamps:true} 
+  // {timestamps:true}
 );
 
 module.exports = mongoose.model("Project", ProjectSchema);
